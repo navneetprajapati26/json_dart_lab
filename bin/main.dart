@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:json_dart_lab/indianStatesDataModel.dart';
+import 'package:json_dart_lab/my_youtube_data.dart';
 import 'package:json_dart_lab/person.dart';
 
 void main() {
@@ -20,11 +21,22 @@ void main() {
     return IndianStatesDataModel.fromJson(x);
   }));
 
+  // todo:IndianStatesData
+  File jsonMyYtDataData = File("assets/my_youtube_data.json");
+  String stringDataOfMyYtData = jsonMyYtDataData.readAsStringSync();
+
+  List<MyYtData> myYtData = List<MyYtData>.from(
+      json.decode(stringDataOfMyYtData).map((x) {
+    return MyYtData.fromJson(x);
+  }));
+
+
+
   //print(persons[1].name);
-  for (int i = 0; i < indianStates.length; i++) {
-    // print(indianStates[i].code);
-    if (indianStates[i].code == "UP") {
-      print(indianStates[i].name);
-    }
+  for (int i = 0; i < myYtData.length; i++) {
+     print(myYtData[i].Title);
+    // if (indianStates[i].code == "UP") {
+    //   print(indianStates[i].name);
+    // }
   }
 }

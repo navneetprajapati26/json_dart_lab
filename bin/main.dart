@@ -34,9 +34,9 @@ void main() {
 
   //print(persons[1].name);
   for (int i = 0; i < myYtData.length; i++) {
-     print(myYtData[i].Title);
-    // if (indianStates[i].code == "UP") {
-    //   print(indianStates[i].name);
-    // }
+     //print(myYtData[i].Title);
+    if (myYtData[i].Title![0] == "Z") {
+      print(myYtData[i].Title);
+    }
   }
 }
